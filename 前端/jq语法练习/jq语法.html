@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jq语法</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+</head>
+<body>
+    <p>点我就不给你看</p>
+    <p>点我就消失</p>
+    <p>点我我就不见</p>
+    <a href="">我就偏偏不走</a>
+    <p>我要走了</p>
+    <span>我会留下来的</span>
+    <button id="come" type="">消失</button>
+    <button id="leave" type="">出来吧</button>
+</body>
+<script type="text/javascript">
+	
+	  $("p").click(function(){
+	    $(this).hide();
+	  });
+
+	  $('#come').click(function() {
+	  	$('p').hide();
+	  })
+
+	  $('#leave').click(function() {
+	  	$('p').show();
+	  })
+	
+
+</script>
+</html>

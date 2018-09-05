@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.83.js"></script>
+</head>
+<body>
+
+    <div id="notMe"><p>id="notMe"</p></div>
+    <div id="myDiv">id="myDiv"</div>
+    <span>这是一个span</span>
+
+
+    <div class="notMe">div class="notMe"</div>
+    <div class="myClass">div class="myClass"</div>
+    <span class="myClass">span class="myClass"</span>
+</body>
+<script type="text/javascript">
+	// id选择器
+	console.log($("#myDiv"));
+	console.log($("#notMe"));
+	// element选择器
+	$("div").css('color','red');
+	// 类选择器
+	$(".myClass").css('fontSize','30px');
+	// *全选择器
+	$("*").css('letterSpacing','8px')
+</script>
+</html>

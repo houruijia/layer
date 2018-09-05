@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>jq_banner</title>
+		<meta charset="utf-8">
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			#banner{
+				width:520px;
+				height:280px;
+				margin:20px auto;
+				/*border:1px solid red;*/
+				position:relative;
+			}
+			#banner .pic{
+				width:100%;
+				height:100%;
+				overflow:hidden;
+			}
+			li{
+				list-style:none;
+			}
+			#banner .pic ul{
+				width:1000%;
+				overflow:hidden;
+				margin-left:-520px;
+			}
+			#banner .pic ul li{
+				float:left;
+			}
+
+			#banner .tab{
+				width:70px;
+				height:14px;
+				/*background:rgba(255,255,255,0.5);*/
+				position:absolute;
+				left:50%;
+				margin-left:-35px;
+				bottom:10px;
+				border-radius:7px;
+			}
+			#banner .tab ul li{
+				width:10px;
+				height:10px;
+				border-radius:100%;
+				background:#999;
+				float:left;
+				margin:2px 2px;
+				cursor:pointer;
+			}
+			#banner .tab ul li.on{
+				background:#ffffff;
+			}
+			#banner .btn{
+				display:none;
+			}
+			#banner .btn a{
+				display: block;
+				width:40px;
+				height:40px;
+                text-decoration: none;
+				background:rgba(0,0,0,0.3);
+				color:#fff;
+				font-size:26px;
+				font-weight:bold;
+				text-align:center;
+				line-height:40px;
+				position:absolute;
+				top:50%;
+				margin-top:-20px;
+			}
+			#prev{
+				left:5px;
+			}
+			#next{
+				right:5px;
+			}
+			#banner .btn a.on{
+				background:rgba(0,0,0,0.6)
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<div id="banner">
+			<div class="pic">
+				<ul>
+					<li><a href="#"><img src="img/05.jpg" /></a></li>
+					<li><a href="#"><img src="img/01.jpg" /></a></li>
+					<li><a href="#"><img src="img/02.jpg" /></a></li>
+					<li><a href="#"><img src="img/03.jpg" /></a></li>
+					<li><a href="#"><img src="img/04.jpg" /></a></li>
+					<li><a href="#"><img src="img/05.jpg" /></a></li>
+					<li><a href="#"><img src="img/01.jpg" /></a></li>
+				</ul>
+			</div>
+			<div class="tab">
+				<ul>
+					<li class="on"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="btn">
+				<a href="#" id="prev">&lt;</a>
+				<a href="#" id="next">&gt;</a>
+			</div>
+		</div>
+	</body>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var $tabLi = $('#banner .tab li');
+            var $picUl = $('#banner .pic ul');
+            var $banner = $('#banner');
+            var $btn = $('#banner .btn');
+            var $btnA = $('#banner .btn a');
+            //运动的宽度 （不带单位）
+            var imgWidth = $('#banner .pic li').width();
+            var index = 0;
+            //目前时间
+            var nowTime = new Date();
+
+            //小圆点点击事件
+            $tabLi.click(function(){
+                //获取当前的序列号
+                index = $(this).index();
+                $(this).addClass('on').siblings().removeClass('on');
+                //动画animate({属性 ： 值}，时间);
+                $picUl.animate({
+                    marginLeft : -imgWidth*(index+1) + 'px'
+                },300);
+            });
+            //hover 的第一个函数是移入事件，第二个是移出事件
+            $banner.hover(function(){
+                $btn.show();
+                clearInterval(timer);
+            },function(){
+                $btn.hide();
+                timer = setInterval(function(){
+                    index ++;
+                    fn();
+                },2000);
+            });
+            //鼠标移入移出改变btn的背景
+            $btnA.hover(function(){
+                $(this).addClass('on');
+            },function(){
+                $(this).removeClass('on');
+            });
+
+            //btn点击的时候切换图片
+            $btnA.click(function(){
+                if ( new Date() - nowTime > 300 )//当前时间减去上一次时间大于300毫秒才执行
+                {
+                    nowTime = new Date();
+                    var i = $(this).index();
+                    //判断点击哪个按钮
+                    i?index++:index--;
+                    fn();
+                }
+            }).mousedown(function(){
+                return false;
+            });
+            //开启定时器
+            var timer = setInterval(function(){
+                index ++;
+                fn();
+            },2000);
+
+            function fn(){
+                var liIndex = index;
+                //判断下标，最后一张时按钮也要回到第一个
+                if ( liIndex >= $tabLi.length )
+                {
+                    liIndex = 0; 
+                }
+                else if ( liIndex < 0 )
+                {
+                    liIndex = $tabLi.length-1;
+                }
+                $tabLi.eq(liIndex).addClass('on').siblings().removeClass('on');
+                $picUl.animate({
+                    marginLeft : -imgWidth*(index+1) + 'px'
+                },300,function(){//回调函数判断，让图片瞬间复位
+                    if ( index == $tabLi.length )
+                    {
+                        $picUl.css('marginLeft' , -imgWidth+'px');
+                        index = 0;
+                    }
+                    else if ( index < 0 )
+                    {
+                        $picUl.css('marginLeft' , -imgWidth*($tabLi.length)+'px');
+                        index = $tabLi.length-1;
+                    }
+                });
+            }
+
+        });
+    </script>
+</html>

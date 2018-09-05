@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选择器5</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.83.js">
+	
+</script>
+</head>
+<body>
+    <table>
+      <tr><td>Header 1</td></tr>
+      <tr><td>Value 1</td></tr>
+      <tr><td>Value 2</td></tr>
+      <tr><td>Value 3</td></tr>
+      <tr><td>Value 4</td></tr>
+    </table>
+
+    <h1>Header 1</h1>
+    <p>Contents 1</p>
+    <h2>Header 2</h2>
+    <p>Contents 2</p>
+
+    
+</body>
+<script type="text/javascript">
+	//大于
+	$("tr:gt(2)").css('color','red')
+	//最后一个元素
+	$("tr:last").css('fontSize','30px')
+	//小于
+	$("tr:lt(2)").css('color','green')
+
+	$(":header").css("background", "#EEE");
+</script>
+</html>

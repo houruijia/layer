@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选择器3</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.83.js">
+	
+</script>
+</head>
+<body>
+    <form>
+	  <label>Name:</label>
+	  <input name="name" value="1112"/>
+	  <fieldset>
+	      <label>Newsletter:</label>
+	      <input name="newsletter" / value="1112">
+	 </fieldset>
+	</form>
+	<input name="none" />
+</body>
+<script type="text/javascript">
+	//prev + next 兄弟选择器
+	$("label + input").css('color','orange');
+	// prev ~ siblings 邻居选择器
+	$("form ~ input").css('color','red')
+</script>
+</html>

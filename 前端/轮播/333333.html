@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>点击滚动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/public.css" rel="stylesheet">
+<style type="text/css" media="screen">
+	.slidebox{width: 1130px;height: 240px; margin: 20px auto;padding-left: 70px;position: relative;}
+	.slidebox .show{width: 1050px;height: 240px;overflow: hidden;position: relative;}
+	.slidebox .show ul{width: 5000px;height: 240px;position: absolute;left: 0px;top: 0px;}
+	.slidebox .show ul li{width: 320px;height: 240px;display: inline-block;margin: 0px 15px;}
+
+
+	
+	.btn{width: 1200px;height: 16px;position: absolute;bottom: 10px;left: 0px;}
+	.btn ol{width: auto;height: 16px;text-align: center;font-size: 0px;}
+	.btn ol li{width: 14px; height: 14px; background: #fff;  border: 1px solid #000;border-radius: 50%;display: inline-block;margin: 0px 6px;cursor: pointer;}
+	.btn ol li.on{background: orange;}
+
+
+
+	.prev{background:url(img/prev.png);width: 32px;height: 32px;position: absolute;left: 50%;margin-left: -600px;top: 120px;}
+	.prev:hover{background:url(img/prev-hover.png);}
+
+	.next{background:url(img/next.png);width: 32px;height: 32px;position: absolute;left: 50%;margin-left: 608px;top: 120px;}
+	.next:hover{background:url(img/next-hover.png);}
+</style>
+</head>
+<body>
+     <div class="slidebox">
+    	<div class="show">
+    	<ul>
+    		<li ><a href="javascript:void(0)"><img src="img/product_01.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_02.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_03.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_04.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_05.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_06.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_04.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_05.png" alt=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="img/product_06.png" alt=""></a></li>
+    	</ul>
+    	</div>
+    	<div class="btn">
+    		<ol>
+    			<li class="on"></li>
+    			<li></li>
+    			<li></li>
+    			<li></li>
+    			<li></li>
+    			<li></li>
+    		</ol>
+    	</div>
+    	<a class="prev" href="javascript:void(0)"></a>
+    	<a class="next" href="javascript:void(0)"></a>
+    </div>
+</body>
+</html>

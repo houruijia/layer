@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>九九乘法表</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+ 
+</body>
+<script type="text/javascript">
+	
+		document.write('<table bgcolor="#F1CB2B" cellspacing="6" cellpadding="5" >');
+	for (var i = 1; i < 10; i++) {
+		document.write('<tr>');
+	for (var j = 1; j <= i; j++) {
+		document.write('<td>');
+		document.write( j + 'X' + i + '=' + i*j)
+
+		document.write('</td>');
+	}
+		document.write('</tr>');
+	}
+		document.write('</table>');
+
+
+		document.write('<table bgcolor="#CB6969" cellspacing="6" cellpadding="5">');
+	for (var i = 9; i >= 1; i--) {
+		document.write('<tr>');
+	for (var j = 1; j <= i; j++) {
+		document.write('<td>');
+
+		document.write( j + 'X' + i + '=' + i*j)
+
+		document.write('</td>');
+	}
+		document.write('</tr>');
+	}
+		document.write('</table>');
+
+
+
+		document.write('<table bgcolor="#64B529" cellspacing="6" cellpadding="5">');
+			 for(var i=1;i<=9;i++){
+            document.write('<tr>');
+                for(var a=1;a<=9-i;a++){
+                    document.write('<td></td>');
+                }
+                for(var j=1;j<=i;j++){
+                    document.write('<td>' + j + "&times;" + i + "=" + (j*i) +'</td>')  
+                }
+            document.write('</tr>');
+
+        }
+        document.write('</table>');
+
+
+        		document.write('<table bgcolor="#E9B73E" cellspacing="6" cellpadding="5">');
+        			 for(var i=9;i>=1;i--){
+                    document.write('<tr>');
+                        for(var a=1;a<=9-i;a++){
+                            document.write('<td></td>');
+                        }
+                        for(var j=1;j<=i;j++){
+                            document.write('<td>' + j + "&times;" + i + "=" + (j*i) +'</td>')  
+                        }
+                    document.write('</tr>');
+
+                }
+                document.write('</table>');
+		
+
+			
+
+</script>
+</html>

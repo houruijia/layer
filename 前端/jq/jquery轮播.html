@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script type="text/javascript" src="js/jquery1.83.js"></script>
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css" media="screen">
+	
+</style>
+</head>
+<body>
+    <div class="slidebox">
+    	<div class="picture">
+    		<ul>
+    			<li><a href="javascript:void(0)"><img src="img/banner1.png" alt=""></a></li>
+    			<li><a href="javascript:void(0)"><img src="img/banner2.png" alt=""></a></li>
+    			<li><a href="javascript:void(0)"><img src="img/banner3.png" alt=""></a></li>
+    		</ul>
+    	</div>
+    	<div class="pointer">
+    		<ol>
+    			<li class="on"></li>
+    			<li></li>
+    			<li></li>
+    		</ol>
+    	</div>
+    	<div class="btn">
+    		<a href="#" id="prev"></a>
+    		<a href="#" id="next"></a>
+    	</div>
+    </div>
+</body>
+<script type="text/javascript">
+	
+		var pul = $('.picture ul li');
+		var pol = $('.pointer ol li');
+		var slidebox = $('.slidebox');
+		var btn = $('.slidebox .btn');
+		var left = $('#prev');
+        var right = $('#next');
+        var num = 0;
+
+        
+        pol.click(function() {
+            //绑定事件
+            index = $(this).index()
+            // index = this.index;
+            $(this).addClass('on').siblings().removeClass('on')
+            $('.pointer ul li').index().show().siblings().hide()
+        })
+	 
+
+
+	
+
+
+
+	// var pli = document.getElementsByClassName('picture')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+	// var pli1 = document.getElementsByClassName('pointer')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+	// var index = 0;
+	// for (var i = 0; i < pli1.length; i++) {
+	// 	pli1[i].index = i;
+	// 	pli1[i].onclick = function(){
+	// 		for (var i = 0; i < pli1.length; i++) {
+	// 			pli1[i].className = '';
+	// 		}
+	// 		this.className = 'on';
+	// 		for (var i = 0; i < pli1.length; i++) {
+	// 			pli[i].style.display = 'none';
+	// 		}
+	// 		pli[this.index].style.display = 'block';
+	// 	}
+	//}
+	
+
+
+// 	$(function(){
+
+// 		var oPic = $('.picture ul li');
+// 		var oTab = $('.pointer ul li');
+// 		var num = 0;
+// //定时器
+// 		var timer = setInterval(turn,2000);
+
+// 		function fnTab(){
+// 			oPic.css('display','none');
+// 			oPic.eq(num).css('display','block');
+// 			oTab.removeAttr('class');
+// 			oTab.eq(num).attr('class','on');
+// 		};
+// 		fnTab();
+
+// 		function turn(){
+// 			num++;
+// 			if (num > oPic.length-1) {
+// 				num = 0;
+// 			}
+// 			fnTab();
+// 		};
+// //底层按钮
+// 		oTab.click(function() {
+// 			oTab.removeAttr('class');
+// 			$(this).attr('class','on');
+// 			var i = $(this).index();
+// 			oPic.css('display', 'none');
+// 			oPic.eq(i).css('display', 'block');
+// 			num = i;
+// 		});
+// //左按钮
+// 		$('.slidebox .prev').click(function(){
+// 			num--;
+// 			if (num < 0) {
+// 				num = oPic.length-1;
+// 			}
+// 			fnTab();
+// 		});
+// //右按钮
+// 		$('.slidebox .next').click(function(){
+// 			num++;
+// 			if (num > oPic.length-1) {
+// 				num = 0
+// 			}
+// 			fnTab();
+// 		});
+
+// 		$('.slidebox').mouseover(function(){
+// 			clearInterval(timer);
+// 		});
+
+// 		$('.slidebox').mouseout(function(){
+// 			timer = setInterval(turn,2000);
+// 		});
+// 	});
+
+	
+</script>
+</html>

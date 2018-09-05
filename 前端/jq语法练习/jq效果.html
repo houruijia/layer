@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jq效果</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<style type="text/css" media="screen">
+	div{width: 100px;height: 100px;line-height: 100px;text-align: center;display: none;}
+	#box1{background: #682B2B}
+	#box2{background: #D12020}
+	#box3{background: #31C42B}
+	.panel{width: auto;background: #EEC3F8}
+</style>
+</head>
+<body>
+    <div id="box1">1</div>	
+    <div id="box2">2</div>
+    <div id="box3">3</div>
+    <button id="btn1" type="">show</button>
+	<button id="btn2" type="">hide</button>
+
+	<div class="panel">
+		<p>W3School - 领先的 Web 技术教程站点</p>
+		<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+	</div>
+	 
+	<p class="flip" style="cursor: pointer">请点击这里</p>
+</body>
+<script type="text/javascript">
+
+ 	$("#btn1").click(function(){
+    $("#box1").fadeIn();
+    $("#box2").fadeIn("slow");
+    $("#box3").fadeIn(3000);
+  });
+
+ 	$('#btn2').click(function() {
+ 		$('#box1').fadeOut();
+ 		$('#box2').fadeOut('hide');
+ 		$('#box3').fadeOut('hide');
+ 	})
+
+ 	$('.flip').click(function() {
+ 		$('.panel').slideDown('show');
+ 	})
+
+ 	
+</script>
+</html>

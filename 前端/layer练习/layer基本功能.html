@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jayer功能</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- <link href="layer/theme/default/layer.css" rel="stylesheet"> -->
+<link rel="stylesheet" type="text/css" href="layer/theme/default/layui.css">
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+</head>
+<body>
+    <div class="clearfix layer-text">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>先睹为快</legend>
+        </fieldset>
+        <div class="clearfix layer-area" id="chutiyan">
+            <a class="layui-btn layui-btn-primary" href="javascript:layer.alert('内容');">初体验</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">第三方扩展皮肤</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" id="confirm">询问层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">提示层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" id="green">墨绿深蓝风</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" style="_display:none;">捕获页</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">页面层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">自定页</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">tips层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">iframe层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">iframe窗</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" id="jiazai">加载层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">loading层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">小tips</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">prompt层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">tab层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">相册层</a>
+            <a class="layui-btn layui-btn-primary" href="http://www.layui.com/demo/layim.html" target="_blank">WebIM</a>
+        </div>
+        <!-- layer-970*90 -->
+        <div style="margin-top:10px; text-align:center;">
+            <ins class="adsbygoogle" style="display:inline-block;width:970px; height:90px;" data-ad-client="ca-pub-6111334333458862" data-ad-slot="5254867833" data-adsbygoogle-status="done">
+                <ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;">
+                    <ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;">
+                        <iframe width="970" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:970px;height:90px;"></iframe>
+                    </ins>
+                </ins>
+            </ins>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $('#confirm').click(function() {
+        // layer.msg('你确定你很帅么？', {
+        //   time: 0 //不自动关闭
+        //   ,btn: ['必须啊', '丑到爆']
+        //   ,yes: function(index){
+        //     layer.close(index);
+        //     layer.msg('雅蠛蝶 O.o', {
+        //       icon: 8
+        //       ,btn: ['嗷','嗷','嗷']
+        //     });
+        //   }
+        // });
+
+        // layer.open({
+        //   type: 2 //此处以iframe举例
+        //   ,title: '当你选择该窗体时，即会在最顶端'
+        //   ,area: ['390px', '330px']
+        //   ,shade: 0
+        //   ,offset: [ //为了演示，随机坐标
+        //     Math.random()*($(window).height()-300)
+        //     ,Math.random()*($(window).width()-390)
+        //   ]
+        //   ,maxmin: true
+        //   ,content: 'settop.html'
+        //   ,btn: ['继续弹出', '全部关闭'] //只是为了演示
+        //   ,yes: function(){
+        //     $(that).click(); //此处只是为了演示，实际使用可以剔除
+        //   }
+        //   ,btn2: function(){
+        //     layer.closeAll();
+        //   }
+          
+        //   ,zIndex: layer.zIndex //重点1
+        //   ,success: function(layero){
+        //     layer.setTop(layero); //重点2
+        //   }
+        // });
+        
+        
+        // 
+        // layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
+        //   time: 20000, //20s后自动关闭
+        //   btn: ['明白了', '知道了', '哦']
+        // });
+
+        layer.confirm('您是如何看待前端开发？', {
+          btn: ['重要','奇葩','无所谓'] //按钮
+          , yes : function(){
+              layer.msg('的确很重要', {icon: 1});
+            }, btn2 : function(){
+              layer.msg('也可以这样', {
+                time: 20000, //20s后自动关闭
+                btn: ['明白了', '知道了']
+              });
+            }, btn3 : function(){
+              layer.msg('滚', {icon: 3});
+            }
+        });
+    })
+
+    $('#green').click(function(event) {
+        layer.msg('玩命提示中');
+        //墨绿深蓝风
+
+        layer.alert('墨绿风格，点击确认看深蓝', {
+          skin: 'layui-layer-molv' //样式类名
+          ,closeBtn: 0
+        }, function(){
+          layer.alert('偶吧深蓝style', {
+            skin: 'layui-layer-lan'
+            ,closeBtn: 0
+            ,anim: 4 //动画类型
+          });
+        });
+    });
+//加载层
+    $('#jiazai').click(function(event) {
+        // var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+        // //loading层
+
+        // var index = layer.load(1, {
+        //   shade: [0.1,'#fff'] //0.1透明度的白色背景
+        // });
+        
+        layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '吸附元素选择器', {
+          tips: [1, '#3595CC'],
+          time: 4000
+        });
+        
+        
+         
+        // layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pass, index){
+        //   layer.close(index);
+        //   layer.prompt({title: '随便写点啥，并确认', formType: 2}, function(text, index){
+        //     layer.close(index);
+        //     layer.msg('演示完毕！您的口令：'+ pass +'<br>您最后写下了：'+text);
+        //   });
+        // });
+    });
+</script>
+</html>

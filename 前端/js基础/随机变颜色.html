@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>随机变换颜色</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div style="width: 200px;height: 200px;" id="show">
+    	
+    </div>
+    <a onclick="change()" href="javascript:void(0)">点击切换颜色</a>
+</body>
+<script type="text/javascript">
+	function change(){
+		var color = ['#FC6060','#DC0D0D','#E729E9','#6F11A3','#171BEA','#2AEF95','#FE6224','#841A11'];
+		//获取数组的长度
+		var length = color.length;
+		//获取0-1的随机数
+		var random = Math.random();
+		//把随机数变为数组的倍数
+		var random1 = random * length;
+		//把随机数向下取整：例如1.554545555变为 1
+		var floor = Math.floor(random1);
+		//取出随机颜色
+		var color_random = color[floor];
+		//赋予show随机颜色
+		// var color_random = color[Math.floor(Math.random() * color.length)];
+		document.getElementById('show').style.background = color_random;
+	}
+</script>
+</html>

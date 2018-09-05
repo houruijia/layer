@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.83.js"></script>
+</head>
+<body>
+	<div>	
+    	<p>这是一个p标签</p>
+	</div>
+	<form>
+		<input type="text" name="" value="" placeholder="11">
+		<button type="">11</button>
+		<textarea>111</textarea>
+		<input type="radio" name="">
+		<input type="radio" name="">
+		<img/><img/>
+	</form>
+	<ul class="list">
+    	<li>1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    	<li>6</li>
+    </ul>
+</body>
+<script type="text/javascript">
+	//找到所有 p 元素，并且这些元素都必须是 div 元素的子元素。
+	$("div > p").css('color','red');
+	//设置页面背景色
+	$(document.body).css("background", "#BDBCBC");
+
+	$('form'.elements).hide()
+
+	$("input:radio", document.forms[0]).css('width','50px');
+	//添加一个标签给body
+	$("<div><p>Hello</p></div>").appendTo("body");
+	//动态加div
+	$("<div>", {
+	  "class": "test",
+	  text: "Click me!",
+	  click: function(){
+	    $(this).toggleClass("test");
+	  }
+	}).appendTo("body");
+
+	$("img").each(function(index, el) {
+		this.src = "test" + index +".jpg";
+	});
+	
+</script>
+</html>

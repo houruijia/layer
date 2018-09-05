@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script type="text/javascript" src="jquery1.83.js"></script>
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div class="slidebox">
+    	<div class="picture">
+    		<ul>
+    			<li><a href=""><img src="" alt=""></a></li>
+    			<li><a href=""><img src="" alt=""></a></li>
+    			<li><a href=""><img src="" alt=""></a></li>
+    		</ul>
+    	</div>
+    	<div class="pointer">
+    		<ul>
+    			<li class="on"></li>
+    			<li></li>
+    			<li></li>
+    		</ul>
+    	</div>
+    	<a href="javascript:void(0)" class="prev"></a>
+    	<a href="javascript:void(0)" class="next"></a>
+    </div>
+</body>
+<script type="text/javascript">
+	$('.pointer ul li').click(function(event) {
+		$(this).addClass('on').siblings().removeClass('on');
+		$('.picture ul li').eq($(this).index()).show().siblings().hide();
+	});
+
+
+	var pli = document.getElementsByClassName('picture')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+	var pli1 = document.getElementsByClassName('pointer')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+	var index = 0;
+	for (var i = 0; i < pli1.length; i++) {
+		pli1[i].index = i;
+		pli1[i].onclick = function(){
+			for (var i = 0; i < pli1.length; i++) {
+				pli1[i].className = '';
+			}
+			this.className = 'on';
+			for (var i = 0; i < pli1.length; i++) {
+				pli[i].style.display = 'none';
+			}
+			pli[this.index].style.display = 'block';
+		}
+	}
+</script>
+</html>

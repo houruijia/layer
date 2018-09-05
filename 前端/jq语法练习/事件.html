@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>事件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="jquery1.83.js"></script>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <button>请点击这里</button>
+    Enter your name: <input class="color" type="text" />
+    Enter your name: <input class="field" type="text" />
+    <div style="background-color:red">
+    <p>这是一个段落。</p>
+    <button>请点击这里</button>
+    </div>
+
+    <input class="on" type="radio" />
+    <input class="on" type="radio"/>
+    <input class="on" type="radio"/>
+</body>
+<script type="text/javascript">
+	// $("button").bind("click",function() {
+	// 	$("p").slideToggle();
+	// });
+
+	$('button').bind({
+		click:function() {$('p').css('color','red');},
+		mouseenter:function() {$('p').css('background-color','green')},
+	});
+
+	$(document).ready(function(){
+		//获取焦点
+	  $(".color").focus(function(){
+	    $(".color").css("background-color","#FFFFCC");
+	  });
+	  //失去焦点
+	  $(".color").blur(function(){
+	    $(".color").css("background-color","#D6D6FF");
+	  });
+	  //改变内容变颜色
+	  $('.field').change(function() {
+	  	$('.field').css("background-color","#1FEBED");
+	  });
+	  //为指定元素加样式
+	  $("div").delegate("button","click",function(){
+	    $("p").slideToggle();
+	  });
+	  //获取焦点
+	  $('#on').focus(function() {
+	  	$('#on').index.hide();
+	  })
+	});
+</script>
+</html>
